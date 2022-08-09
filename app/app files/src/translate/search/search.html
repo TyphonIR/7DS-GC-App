@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-file_name="search.html">
+    <title>search</title>
+    <!-- #region CSS Links -->
+    <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./search.css">
+    <!-- #endregion -->   
+    <!-- #region JS Scripts -->
+    <script src="../global/global.js" defer></script>
+    <script src="./variables.js" defer></script>
+    <script src="./search.js" defer></script>
+    <script src="../global/shortcuts.js" defer></script>
+    <script src="../settings/settings.js" defer></script>
+    <!-- #endregion -->
+</head>
+<body>
+    <nav>
+        <div id="nav-menu-controls" class="nav-controls">
+            <button id="help-open" class="nav-btn" title="Not active now.">?</button>
+            <button id="toggle-input"></button>
+        </div>
+        <div id="nav-heading">
+            <h1 id="heading">Translate</h1>
+        </div>
+        <div id="controls" class="nav-controls">
+            <button id="toggle-mode" class="nav-btn">Toggle</button>
+            <button id="toggle-nav" class="nav-btn">&uparrow;</button>
+        </div>
+    </nav>
+    <header id="search">
+        <label for="search_input">Search</label>
+        <input type="text" name="search_input" id="search-bar" placeholder="Type character name here" autocomplete="off">
+    </header>
+    <div id="display-copied-text">
+        <p>Copied: <span id="copied-text"></span> to the clipboard.</p>
+    </div>
+    <main id="container">
+        <div id="no-match">
+            <p>No match found</p>
+        </div>
+    </main>
+    <a href="#top" id="to-top">&Uparrow;</a>
+</body>
+</html>

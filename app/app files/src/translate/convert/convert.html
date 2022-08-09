@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-file_name="convert.html">
+    <title>Convert</title>
+    <!-- #region CSS -->
+    <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./convert.css">
+    <!-- #endregion -->
+    <!-- #region JS -->
+    <script src="../global/global.js" defer></script>
+    <script src="./variables.js" defer></script>
+    <script src="./convert.js" defer></script>
+    <script src="../global/shortcuts.js" defer></script>
+    <!-- #endregion -->
+</head>
+<body>
+    <nav>
+        <div id="nav-menu-controls" class="nav-controls">
+            <button id="help-open" class="nav-btn" title="Not active now.">?</button>
+        </div>
+        <div id="nav-heading">
+            <h1 id="heading">Translate</h1>
+        </div>
+        <div id="controls" class="nav-controls">
+            <button id="toggle-mode" class="nav-btn">Toggle</button>
+            <button id="toggle-nav" class="nav-btn">&uparrow;</button>
+        </div>
+    </nav>
+    <header id="convert">
+        <label for="convert_input">Convert</label>
+        <input type="text" name="convert_input" id="convert-bar" placeholder="Type character name here" autocomplete="off">
+    </header>
+    <main id="container">
+        <div id="no-match">
+            <p>No match found</p>
+        </div>
+    </main>
+    <div id="convert-results">
+        <p id="convert-results-name"></p>
+        <br>
+        <p id="convert-results-text">placeholder text</p>
+    </div>
+</body>
+</html>
