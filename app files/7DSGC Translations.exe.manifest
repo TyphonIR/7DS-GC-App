@@ -32,14 +32,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="7DSGC Translations.exe" size="22496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="7DSGC Translations.exe" size="24032">
       <assemblyIdentity name="7DSGC Translations" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Dl8d4QV043njxL3qAp+tFWLYAWT349WmAifyMlVGHSw=</dsig:DigestValue>
+        <dsig:DigestValue>w737OBCpL7c4+kK/WGIq6x/jr+a0r0vpIkyp+ZigkP8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -51,7 +51,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dA9fa5prOjFrfoohQeASxDAbgZFSeDQVL7ETDGy+5p4=</dsig:DigestValue>
+        <dsig:DigestValue>r7o6GSDkf5tXzCN+dINHlyEokqSXHkEXJA00lp/+LNA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

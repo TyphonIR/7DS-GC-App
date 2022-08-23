@@ -1,0 +1,246 @@
+
+:root {
+    --nav_height: 7%;
+    --background-colour: rgb(20, 20, 20);
+    --options-side-bar-width: 300px;
+    --options-sections-border: 4px solid rgb(45, 45, 45);
+    --options-sections-first-last-child-margin: 15px;
+}
+
+body {
+    position: absolute;
+    color: white;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-colour);
+}
+
+button {
+    /* font-weight: bold; */
+    background-color: rgb(40, 40, 40);
+    border: none;
+    color: white;
+    height: 30px;
+    min-width: 30px;
+}
+
+button:active {
+    background-color: rgb(50, 50, 50);
+}
+
+/* #region Nav bar */
+
+nav {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100%;
+    width: 100%;
+    height: var(--nav_height);
+    background-color: rgb(20, 20, 20);
+    border-bottom: 5px solid rgb(30, 30, 30);
+    color: white;
+    user-select: none;
+    transform: 5s;
+    overflow: hidden;
+    z-index: 1;
+}
+
+nav > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-menu-controls {
+    justify-self: left;
+}
+
+.nav-controls {
+    margin: 20px;
+    transition: 0.3s;
+}
+
+#options-open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#options:active {
+    background-color: rgb(50, 50, 50);
+}
+
+#controls {
+    justify-self: right;
+    top: 0;
+    right: 0%;
+    transition: 0.3s;
+}
+
+.nav-btn {
+    margin: 0 5px;
+}
+
+/* #endregion */
+
+/* #region Options side bar */
+
+#options-side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgb(30, 30, 30);
+    border-right: 2px solid rgb(45, 45, 45);
+    box-shadow: 0 0 10px black;
+    height: 100%;
+    width: 0;
+    transition: 0.3s ease-in-out;
+    overflow-x: hidden;
+}
+
+#options-side-bar > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--options-sections-border);
+    border-bottom: none;
+    width: 100%;
+}
+
+#options-side-bar > section:last-of-type {
+    border-bottom: var(--options-sections-border);
+}
+
+#options-side-bar > section > * {
+    margin: 10px;
+}
+
+#options-side-bar > section > *:first-child {
+    text-decoration: underline;
+    margin-top: var(--options-sections-first-last-child-margin);
+}
+
+#options-side-bar > section > *:last-child {
+    margin-bottom: var(--options-sections-first-last-child-margin);
+}
+
+.hideElem {
+    display: none;
+}
+
+#options-close {
+    position: absolute;
+    right: 2%;
+    top: 1%;
+}
+
+#options-side-bar::-webkit-scrollbar {
+    width: 7px;
+    background-color: var(--scrollbar-bg-colour);
+}
+
+#options-side-bar::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-bg-colour);
+}
+
+#options-side-bar::-webkit-scrollbar-thumb {
+    background-color: rgb(40, 40, 40);
+    border-radius: 100px;
+    height: 100px;
+}
+
+.settings-text {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    border: none;
+    border-bottom: 3px solid rgb(90, 90, 90);
+    background-color: transparent;
+    transition: 0.5s;
+    width: var(--list-item-width);
+}
+
+.settings-text:focus {
+    outline: none;
+    border-bottom: 3px solid chartreuse;
+}
+
+.no-settings {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.option-select {
+    text-align: center;
+    padding: 7px;
+    background-color: transparent;
+    width: 80%;
+    border: 3px solid rgb(90, 90, 90);
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.option-select:focus {
+    border: 3px solid chartreuse;
+    box-shadow: none;
+    outline: none;
+}
+
+option {
+    text-align: center;
+    background-color: rgb(90, 90, 90);
+}
+
+/* #endregion */
+
+/* #region main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - var(--nav_height));
+    user-select: none;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.search-frame {
+    width: 100%;
+    height: 100%;
+}
+
+.convert {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.convert-frame {
+    width: 100%;
+    height: 100%;
+}
+
+/* #endregion */

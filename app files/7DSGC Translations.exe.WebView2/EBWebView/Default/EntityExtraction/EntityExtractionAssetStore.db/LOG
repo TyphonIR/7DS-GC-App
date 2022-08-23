@@ -1,3 +1,2 @@
-2022/08/08-19:57:24.455 30bc Reusing MANIFEST D:\GC Eng - Jp translations\exe version\app\7DSGC Translations.exe.WebView2\EBWebView\Default\EntityExtractionAssetStore.db/MANIFEST-000001
-2022/08/08-19:57:24.458 30bc Recovering log #4
-2022/08/08-19:57:24.536 30bc Reusing old log D:\GC Eng - Jp translations\exe version\app\7DSGC Translations.exe.WebView2\EBWebView\Default\EntityExtractionAssetStore.db/000004.log 
+2022/08/23-14:02:20.384 3aac Creating DB C:\Users\jarro\OneDrive\Documents\Coding\C#\Grand_Cross_name_translation_app\bin\Debug\7DSGC Translations.exe.WebView2\EBWebView\Default\EntityExtractionAssetStore.db since it was missing.
+2022/08/23-14:02:20.602 3aac Reusing MANIFEST C:\Users\jarro\OneDrive\Documents\Coding\C#\Grand_Cross_name_translation_app\bin\Debug\7DSGC Translations.exe.WebView2\EBWebView\Default\EntityExtractionAssetStore.db/MANIFEST-000001

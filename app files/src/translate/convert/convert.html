@@ -20,7 +20,7 @@
 <body>
     <nav>
         <div id="nav-menu-controls" class="nav-controls">
-            <button id="help-open" class="nav-btn" title="Not active now.">?</button>
+            <button id="help-open" class="nav-btn">?</button>
         </div>
         <div id="nav-heading">
             <h1 id="heading">Translate</h1>
@@ -30,6 +30,11 @@
             <button id="toggle-nav" class="nav-btn">&uparrow;</button>
         </div>
     </nav>
+    <div id="help-side-bar">
+        <button id="help-close">X</button>
+        <h2>Help</h2>
+        <p>unavalible for now</p>
+    </div>
     <header id="convert">
         <label for="convert_input">Convert</label>
         <input type="text" name="convert_input" id="convert-bar" placeholder="Type character name here" autocomplete="off">
@@ -41,7 +46,6 @@
     </main>
     <div id="convert-results">
         <p id="convert-results-name"></p>
-        <br>
         <p id="convert-results-text">placeholder text</p>
     </div>
 </body>

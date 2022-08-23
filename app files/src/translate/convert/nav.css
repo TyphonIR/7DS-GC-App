@@ -149,28 +149,6 @@ nav > div {
     height: 100px;
 }
 
-.help-text {
-    font-size: 20px;
-    text-align: center;
-    color: white;
-    border: none;
-    border-bottom: 3px solid rgb(90, 90, 90);
-    background-color: transparent;
-    transition: 0.5s;
-    width: var(--list-item-width);
-}
-
-.help-text:focus {
-    outline: none;
-    border-bottom: 3px solid chartreuse;
-}
-
-.no-help {
-    color: red;
-    font-weight: bold;
-    font-size: 20px;
-}
-
 /* #region Help content */
 
 .help-sidebar-content {
@@ -186,7 +164,29 @@ nav > div {
     max-height: 30px;
 }
 
+.help-text {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    border: none;
+    border-bottom: 3px solid rgb(90, 90, 90);
+    background-color: transparent;
+    transition: 0.5s;
+    width: var(--list-item-width);
+}
+
+.help-text-heading {
+
+}
+
+.no-help {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 /* #endregion */
+
 
 /* #endregion */
 
