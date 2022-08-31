@@ -30,6 +30,7 @@ let characters = [
     `Drole = ドロール = ${characterIconsPath}\\drole.png`,
 
     `Eastin = イースティン = ${characterIconsPath}\\eastin.png`,
+    `Echidna = エキドナ = ${characterIconsPath}\\echidna.png`,
     `Elaine = エレイン = ${characterIconsPath}\\elaine.png`,
     `Eleven = 十一 = ${characterIconsPath}\\eleven.png`,
     `Elizabeth = エリザベス = ${characterIconsPath}\\elizabeth.png`,
@@ -96,6 +97,7 @@ let characters = [
     `Oslo = オスロー = ${characterIconsPath}\\oslo.png`,
 
     `Ram = ラム = ${characterIconsPath}\\ram.png`,
+    `Reinhard = ラインハルト = ${characterIconsPath}\\reinhard.png`,
     `Rem = レム = ${characterIconsPath}\\rem.png`,
     `Rimuru = リムル = ${characterIconsPath}\\rimuru.png`,
     `Roxy = ロキシー = ${characterIconsPath}\\roxy.png`,
