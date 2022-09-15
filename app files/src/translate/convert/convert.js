@@ -93,13 +93,11 @@ function copyToClipboard(name, translation) {
     
     convertRestultsEngName_p.style.display = "";
     convertRestultsEngName_p.textContent = characterNameAndTranslations;
-    convertResultsText_p.style.color = "rgb(10, 255, 10)";
     convertResultsText_p.textContent = `Copied '${translation}' to clipboard`;
 }
 
 function convertName() {
     let listItemsDisplayStatus = [];
-
     let characterName = '';
     let characterTranslatedName = '';
     let characterNameAndTranslations = '';
@@ -128,7 +126,6 @@ function convertName() {
             noMatch_div.style.display = "flex";
             convertRestultsEngName_p.style.display = "none";
             convertResultsText_p.textContent = "Type in the name of the character you want to convert to japanese.";
-            convertResultsText_p.style.color = "yellow";
         }
 
         noMatchText_p.style.color = "red";
@@ -143,7 +140,6 @@ function convertName() {
         
         convertRestultsEngName_p.style.display = "none";
         convertResultsText_p.textContent = "Type in the name of the character you want to convert to japanese.";
-        convertResultsText_p.style.color = "yellow";
     }
 }
 

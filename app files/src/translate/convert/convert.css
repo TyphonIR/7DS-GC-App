@@ -1,6 +1,7 @@
 
 :root {
     --text-colour: white;
+    --theme: cyan;
     --background-colour: rgb(20, 20, 20);
     --list-item-width: 60%;
     --list-item-border: 4px solid rgb(30, 30, 30);
@@ -79,7 +80,25 @@ body {
 
 #convert-bar:focus {
     outline: none;
-    border-bottom: 3px solid yellow;
+    border-bottom: 3px solid var(--theme);
+}
+
+#convert-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 400;
+    min-height: 200px;
+    width: var(--list-item-width);
+    border: var(--list-item-border);
+    color: var(--theme);
+    background-color: black;
+}
+
+#convert-results > * {
+    margin: 15px;
 }
 
 #container {
@@ -140,25 +159,6 @@ img {
     border: var(--list-item-border);
     background-color: rgb(35, 35, 35);
 }
-
-#convert-results {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 18px;
-    font-weight: 400;
-    min-height: 200px;
-    width: var(--list-item-width);
-    border: var(--list-item-border);
-    color: yellow;
-    background-color: black;
-}
-
-#convert-results > * {
-    margin: 15px;
-}
-
 
 /* #region Media queries */
 
