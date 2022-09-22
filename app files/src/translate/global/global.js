@@ -1,5 +1,14 @@
 const currentFileName_meta = document.querySelector("meta[data-file_name]");
 const current_file_name = currentFileName_meta.dataset.file_name;
+let lastEnteredName = "";
+
+function getLastEnteredName(e) {
+    e.target.value = lastEnteredName;
+    setTimeout(() => {
+        e.target.setSelectionRange(lastEnteredName.length, lastEnteredName.length);
+        e.target.focus();
+    }, 0)
+}
 
 function getImagePath(name, fileType = "png") {
     const imagesPath = "..\\..\\images"
@@ -7,132 +16,144 @@ function getImagePath(name, fileType = "png") {
     return `${characterIconsPath}\\${name}.${fileType}`;
 }
 
+function makeCharacStr(name, translation, image_type = "png", image_name = name) {
+    name = name.toLowerCase();
+    let capitilizedName = name[0].toUpperCase() + name.slice(1);
+    return `${capitilizedName} = ${translation} = ${getImagePath(image_name, image_type)}`
+}
+
 let characters = [
-    `Alioni = アリオーニ = ${getImagePath("alioni")}`,
-    `Arden = アーデン = ${getImagePath("arden")}`,
-    `Arthur = アーサー = ${getImagePath("arthur")}`,
-    `Athena = アテナ姫 = ${getImagePath("athena")}`,
-
-    `Ban = バン = ${getImagePath("ban")}`,
-    `Beatrice = ベアトリス = ${getImagePath("beatrice")}`,
-    `Bellion = ベルリオン = ${getImagePath("bellion")}`,
-    `Benimaru = ベニマル = ${getImagePath("benimaru")}`,
-    `Brunhild = ブリュンヒルデ = ${getImagePath("brunhildr")}`,
-
-    `Cain = ケイン = ${getImagePath("cain")}`,
-    `Camilla = カミラ = ${getImagePath("camilla")}`,
-    `Chandler = チャンドラー = ${getImagePath("chandler")}`,
-    `Cusack = キューザック = ${getImagePath("cusack")}`,
-
-    `Deathpierce = デスピアス = ${getImagePath("deathpierce")}`,
-    `Deldry = デルドレー = ${getImagePath("deldry")}`,
-    `Denzel = デンゼル = ${getImagePath("denzel")}`,
-    `Derieri = デリエリ = ${getImagePath("derieri")}`,
-    `Diane = ディアンヌ = ${getImagePath("diane")}`,
-    `Dogedo = ドゲッド = ${getImagePath("dogedo")}`,
-    `Dreyfus = ドレファス = ${getImagePath("dreyfus")}`,
-    `Drole = ドロール = ${getImagePath("drole")}`,
-
-    `Eastin = イースティン = ${getImagePath("eastin")}`,
-    `Echidna = エキドナ = ${getImagePath("echidna")}`,
-    `Elaine = エレイン = ${getImagePath("elaine")}`,
-    `Eleven = 十一 = ${getImagePath("eleven")}`,
-    `Elizabeth = エリザベス = ${getImagePath("elizabeth")}`,
-    `Ellate = エルラッテ = ${getImagePath("ellate")}`,
-    `Emilia = エミリア = ${getImagePath("emilia")}`,
-    `Eren = エレン = ${getImagePath("eren")}`,
-    `Escanor = エスカノール = ${getImagePath("escanor")}`,
-    `Estarossa = エスタロッサ = ${getImagePath("estarossa")}`,
-
-    `Fraudrin = フラウドリン = ${getImagePath("fraudrin")}`,
-    `Freisia = フリージア = ${getImagePath("freisia")}`,
-    `Freyr = フレイ = ${getImagePath("freyr")}`, 
-    `Freyja = フレイヤ = ${getImagePath("freyja")}`, 
-
-    `Galland = ガラン = ${getImagePath("galland")}`,
-    `Gerheade = ゲラード = ${getImagePath("gerheade")}`,
-    `Gilthunder = ギルサンダー = ${getImagePath("gilthunder")}`,
-    `Gloxinia = グロキシニア = ${getImagePath("gloxinia")}`,
-    `Golgius = ゴルギウス = ${getImagePath("golgius")}`,
-    `Gowther = ゴウセル = ${getImagePath("gowther")}`,
-    `Griamore = グリアモール = ${getImagePath("griamore")}`,
-    `Guila = ギーラ = ${getImagePath("guila")}`,
-    `Gustav = グスタフ = ${getImagePath("gustav")}`,
-
-    `Harlequin = ハーレクイン = ${getImagePath("harlequin")}`,
-    `Hawk = ホーク = ${getImagePath("hawk")}`,
-    `Helbram = ヘルブラム = ${getImagePath("helbram")}`,
-    `Hendrickson = ヘンドリクセン = ${getImagePath("hendy")}`,
-    `Howzer = ハウザー = ${getImagePath("howzer")}`,
-    `Hugo = ヒューゴ = ${getImagePath("hugo")}`,
-
-    `Iori = 八神 = ${getImagePath("iori")}`,
-
-    `Jenna = ジェンナ = ${getImagePath("jenna")}`,
-    `Jericho = ジェリコ = ${getImagePath("jericho")}`,
-    `Jillian = ジリアン = ${getImagePath("jillian")}`,
-    `Jim = ジム = ${getImagePath("jim")}`,
-    `Jormungandr = ヨルムンガンド = ${getImagePath("jormungandr")}`,
-    `Jude = ジュド = ${getImagePath("jude")}`,
-
-    `King = キング = ${getImagePath("king")}`,
-    `Kyo = 草薙 = ${getImagePath("kyo")}`,
-
-    `levi = リヴァイ = ${getImagePath("levi")}`,
-    `Lilia = リリア = ${getImagePath("lilia")}`,
-    `Liz = リズ = ${getImagePath("liz")}`,
-    `Ludociel = リュドシエル = ${getImagePath("ludociel")}`,
-
-    `Mai = 不知火 = ${getImagePath("mai")}`,
-    `Marmas = マルマス = ${getImagePath("marmas")}`,
-    `Matrona = マトローナ = ${getImagePath("matrona")}`,
-    `Megelda = メゲルダ = ${getImagePath("megelda")}`,
-    `Melascula = メラスキュラ = ${getImagePath("melascula")}`,
-    `Meliodas = メリオダス = ${getImagePath("meliodas")}`,
-    `Merlin = マーリン = ${getImagePath("merlin")}`,
-    `Mikasa = ミカサ = ${getImagePath("mikasa")}`,
-    `Mike = マイク = ${getImagePath("mike")}`,
-    `Milim = ミリム = ${getImagePath("milim")}`,
-    `Mono = モノ = ${getImagePath("mono")}`,
-    `Monspeet = モンスピート = ${getImagePath("monspeet")}`,
-
-    `Nanashi = ななし = ${getImagePath("nanashi")}`,
-
-    `Oslo = オスロー = ${getImagePath("oslo")}`,
-
-    `Ram = ラム = ${getImagePath("ram")}`,
-    `Reinhard = ラインハルト = ${getImagePath("reinhard")}`,
-    `Rem = レム = ${getImagePath("rem")}`,
-    `Rimuru = リムル = ${getImagePath("rimuru")}`,
-    `Roxy = ロキシー = ${getImagePath("roxy")}`,
-    `Rugal = ルガール = ${getImagePath("rugal")}`,
-    `Ruin = ルイン = ${getImagePath("ruin")}`,
-
-    `Sariel = サリエル = ${getImagePath("sariel")}`,
-    `Shin = シン = ${getImagePath("shin")}`,
-    `Shuna = シュナ = ${getImagePath("shuna")}`,
-    `Sigurd = シグルド = ${getImagePath("sigurd")}`,
-    `Simon = サイモン = ${getImagePath("simon")}`,
-    `Skadi = スカジ = ${getImagePath("skadi")}`,
-    `Slader = スレイダー = ${getImagePath("slader")}`,
-
-    `Taizoo = タイズー = ${getImagePath("taizoo")}`,
-    `Tarmiel = タルミエル = ${getImagePath("tarmiel")}`,
-    `Terry = テリー = ${getImagePath("terry")}`,
-    `Thonar = ドーナル = ${getImagePath("thonar")}`,
-    `Twigo = ツイーゴ = ${getImagePath("twigo")}`,
-
-    `Valenti = バレンティ = ${getImagePath("valenti")}`,
-    `Vivian = ビビアン = ${getImagePath("vivian")}`,
-
-    `Waillo = ワイーヨ = ${getImagePath("waillo")}`,
-    `Weinheidt = ワインハイト = ${getImagePath("weinheidt")}`,
-    `Will = ウィル = ${getImagePath("will")}`,
-
-    `Zaneri = ザネリ = ${getImagePath("zaneri")}`,
-    `Zaratras = ザラトラス = ${getImagePath("zaratras")}`,
-    `Zeldris = ゼルドリス = ${getImagePath("zeldris")}`,
-];
+    // A
+    makeCharacStr("alioni", "アリオーニ"),
+    makeCharacStr("arden", "アーデン"),
+    makeCharacStr("arthur", "アーサー"),
+    makeCharacStr("athena", "アテナ"),
+    // B
+    makeCharacStr("ban", "バン"),
+    makeCharacStr("beatrice", "ベアトリス"),
+    makeCharacStr("bellion", "ベルリオン"),
+    makeCharacStr("benimaru", "ベニマル"),
+    makeCharacStr("brunhild", "ブリュンヒルデ", "png", "brunhildr"),
+    // C
+    makeCharacStr("cain", "ケイン"),
+    makeCharacStr("camilla", "カミラ"),
+    makeCharacStr("chandler", "チャンドラー"),
+    makeCharacStr("cusack", "キューザック"),
+    // D
+    makeCharacStr("deathpierce", "デスピアス"),
+    makeCharacStr("deldry", "デルドレー"),
+    makeCharacStr("denzel", "デンゼル"),
+    makeCharacStr("derieri", "デリエリ"),
+    makeCharacStr("diane", "ディアンヌ"),
+    makeCharacStr("dogedo", "ドゲッド"),
+    makeCharacStr("dreyfus", "ドレファス"),
+    makeCharacStr("drole", "ドロール"),
+    // E
+    makeCharacStr("eastin", "イースティン"),
+    makeCharacStr("echidna", "エキドナ"),
+    makeCharacStr("elaine", "エレイン"),
+    makeCharacStr("eleven", "十一"),
+    makeCharacStr("elizabeth", "エリザベス"),
+    makeCharacStr("ellate", "エルラッテ"),
+    makeCharacStr("emilia", "エミリア"),
+    makeCharacStr("eren", "エレン"),
+    makeCharacStr("escanor", "エスカノール"),
+    makeCharacStr("estarossa", "エスタロッサ"),
+    // F
+    makeCharacStr("fraudrin", "フラウドリン"),
+    makeCharacStr("freisia", "フリージア"),
+    makeCharacStr("freyja", "フレイヤ"),
+    makeCharacStr("freyr", "フレイ"),
+    // G
+    makeCharacStr("galland", "ガラン"),
+    makeCharacStr("gerheade", "ゲラード"),
+    makeCharacStr("gilthunder", "ギルサンダー"),
+    makeCharacStr("gloxinia", "グロキシニア"),
+    makeCharacStr("golgius", "ゴルギウス"),
+    makeCharacStr("gowther", "ゴウセル"),
+    makeCharacStr("griamore", "グリアモール"),
+    makeCharacStr("guila", "ギーラ"),
+    makeCharacStr("gustav", "グスタフ"),
+    // H
+    makeCharacStr("harlequin", "ハーレクイン"),
+    makeCharacStr("hawk", "ホーク"),
+    makeCharacStr("helbram", "ヘルブラム"),
+    makeCharacStr("hendrickson", "ヘンドリクセン", "png", "hendy"),
+    makeCharacStr("howzer", "ハウザー"),
+    makeCharacStr("hugo", "ヒューゴ"),
+    // I
+    makeCharacStr("iori", "八神"),
+    // J
+    makeCharacStr("jenna", "ジェンナ"),
+    makeCharacStr("jericho", "ジェリコ"),
+    makeCharacStr("jillian", "ジリアン"),
+    makeCharacStr("jim", "ジム"),
+    makeCharacStr("jormungandr", "ヨルムンガンド"),
+    makeCharacStr("jude", "ジュド"),
+    // K
+    makeCharacStr("king", "キング"),
+    makeCharacStr("kyo", "草薙"),
+    // L
+    makeCharacStr("levi", "リヴァイ"),
+    makeCharacStr("lilia", "リリア"),
+    makeCharacStr("liz", "リズ"),
+    makeCharacStr("ludociel", "リュドシエル"),
+    // M
+    makeCharacStr("mai", "不知火"),
+    makeCharacStr("marmas", "マルマス"),
+    makeCharacStr("matrona", "マトローナ"),
+    makeCharacStr("megelda", "メゲルダ"),
+    makeCharacStr("melascula", "メラスキュラ"),
+    makeCharacStr("meliodas", "メリオダス"),
+    makeCharacStr("merlin", "マーリン"),
+    makeCharacStr("mikasa", "ミカサ"),
+    makeCharacStr("mike", "マイク"),
+    makeCharacStr("milim", "ミリム"),
+    makeCharacStr("mono", "モノ"),
+    makeCharacStr("monspeet", "モンスピート"),
+    // N
+    makeCharacStr("nanashi", "ななし"),
+    // O
+    makeCharacStr("oslo", "オスロー"),
+    // P
+    // Q
+    // R
+    makeCharacStr("ram", "ラム"),
+    makeCharacStr("reinhard", "ラインハルト"),
+    makeCharacStr("rem", "レム"),
+    makeCharacStr("rimuru", "リムル"),
+    makeCharacStr("roxy", "ロキシー"),
+    makeCharacStr("rugal", "ルガール"),
+    makeCharacStr("ruin", "ルイン"),
+    // S
+    makeCharacStr("sariel", "サリエル"),
+    makeCharacStr("shin", "シン"),
+    makeCharacStr("shuna", "シュナ"),
+    makeCharacStr("sigurd", "シグルド"),
+    makeCharacStr("simon", "サイモン"),
+    makeCharacStr("skadi", "スカジ"),
+    makeCharacStr("slader", "スレイダー"),
+    // T
+    makeCharacStr("taizoo", "タイズー"),
+    makeCharacStr("tarmiel", "タルミエル"),
+    makeCharacStr("terry", "テリー"),
+    makeCharacStr("thonar", "ドーナル"),
+    makeCharacStr("twigo", "ツイーゴ"),
+    // U
+    // V
+    makeCharacStr("valenti", "バレンティ"),
+    makeCharacStr("vivian", "ビビアン"),
+    // W
+    makeCharacStr("waillo", "ワイーヨ"),
+    makeCharacStr("weinheidt", "ワインハイト"),
+    makeCharacStr("will", "ウィル"),
+    // X
+    // Y
+    // Z
+    makeCharacStr("Zaneri", "ザネリ"),
+    makeCharacStr("Zaratras", "ザラトラス"),
+    makeCharacStr("Zeldris", "ゼルドリス"),
+]
 
 function addCharacters(callback) {
     for (let i = 0; i < characters.length; i++) {
@@ -145,3 +166,6 @@ function addCharacters(callback) {
         callback(image_src, name_and_translations, name);
     }
 }
+
+// --------------------------- Testing -------------------------------
+// ------------------------- End Testing -----------------------------
