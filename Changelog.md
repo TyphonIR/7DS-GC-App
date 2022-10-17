@@ -1,3 +1,5 @@
 # 31/08/2022
 * Added Reinhard and Echidna
-* Changed Zeldris and Thonar's Icon
+* Updated Zeldris and Thonar's Icons
+# 15/10/2022
+* Updated Merlin and Eastin's Icons
