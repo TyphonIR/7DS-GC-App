@@ -60,6 +60,7 @@ let characters = [
     makeCharacStr("escanor", "エスカノール"),
     makeCharacStr("estarossa", "エスタロッサ"),
     // F
+    makeCharacStr("filo", "フィーロ"),
     makeCharacStr("fraudrin", "フラウドリン"),
     makeCharacStr("freisia", "フリージア"),
     makeCharacStr("freyja", "フレイヤ"),
@@ -92,6 +93,7 @@ let characters = [
     makeCharacStr("jude", "ジュド"),
     // K
     makeCharacStr("king", "キング"),
+    makeCharacStr("kizuna", "風山絆"),
     makeCharacStr("kyo", "草薙"),
     // L
     makeCharacStr("levi", "リヴァイ"),
@@ -112,6 +114,7 @@ let characters = [
     makeCharacStr("mono", "モノ"),
     makeCharacStr("monspeet", "モンスピート"),
     // N
+    makeCharacStr("naofumi", "尚文"),
     makeCharacStr("nanashi", "ななし"),
     // O
     makeCharacStr("oslo", "オスロー"),
@@ -119,6 +122,7 @@ let characters = [
     // Q
     // R
     makeCharacStr("ram", "ラム"),
+    makeCharacStr("raphtalia", "ラフタリア"),
     makeCharacStr("reinhard", "ラインハルト"),
     makeCharacStr("rem", "レム"),
     makeCharacStr("rimuru", "リムル"),

@@ -62,7 +62,7 @@ nav > div {
 
 /* #region Help side bar */
 
-#help-open {
+/* #help-open {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,11 +147,11 @@ nav > div {
     background-color: rgb(40, 40, 40);
     border-radius: 100px;
     height: 100px;
-}
+} */
 
 /* #region Help content */
 
-.help-sidebar-content {
+/* .help-sidebar-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,7 +183,7 @@ nav > div {
     color: red;
     font-weight: bold;
     font-size: 20px;
-}
+} */
 
 /* #endregion */
 

@@ -1,17 +1,5 @@
 
 //#region Navbar and Help functions
-
-function toggleHelpSideBar(closeOrOpen = "") {
-    if (closeOrOpen === "open") {
-        helpSideBar_div.style.width = "var(--help-side-bar-width)";
-        helpSideBar_div.style.left = "0";
-        for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className -= "hideElem";
-    } else if (closeOrOpen === "close") {
-        helpSideBar_div.style.width = "0";
-        helpSideBar_div.style.left = "-100px";
-        for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className += "hideElem";
-    }
-}
   
 function toggleMode(toggleTo = "toggle") {
     const a_Elem = document.createElement("a");
@@ -37,16 +25,28 @@ function toggleNavBar() {
     controls_div.style.position = navBar.style.height === "0px" ? "fixed" : "relative";
     convert_header.style.marginTop = navBar.style.height === "0px" ? "10px" : "var(--convert-margin-top)";
 }
-  
-function toggleNoHelpText(hide, index) {
-    let text = noHelpText_p[index];
 
-    if (hide) {
-        if (!text.className.includes(" hideElem")) text.className += " hideElem";
-    } else if (!hide) {
-        if (text.className.includes(" hideElem")) text.className.replace(" hideElem", "");
-    }
-}
+// function toggleHelpSideBar(closeOrOpen = "") {
+//     if (closeOrOpen === "open") {
+//         helpSideBar_div.style.width = "var(--help-side-bar-width)";
+//         helpSideBar_div.style.left = "0";
+//         for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className -= "hideElem";
+//     } else if (closeOrOpen === "close") {
+//         helpSideBar_div.style.width = "0";
+//         helpSideBar_div.style.left = "-100px";
+//         for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className += "hideElem";
+//     }
+// }
+  
+// function toggleNoHelpText(hide, index) {
+//     let text = noHelpText_p[index];
+
+//     if (hide) {
+//         if (!text.className.includes(" hideElem")) text.className += " hideElem";
+//     } else if (!hide) {
+//         if (text.className.includes(" hideElem")) text.className.replace(" hideElem", "");
+//     }
+// }
 
 //#endregion
 
@@ -171,8 +171,8 @@ function addEventListeners() {
         })
     })
 
-    helpOpen_button.addEventListener("click", () => toggleHelpSideBar("open"));
-    helpClose_button.addEventListener("click", () => toggleHelpSideBar("close"));
+    // helpOpen_button.addEventListener("click", () => toggleHelpSideBar("open"));
+    // helpClose_button.addEventListener("click", () => toggleHelpSideBar("close"));
     window.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && helpSearchSection.style.width !== "0") toggleHelpSideBar("close");
     })

@@ -1,6 +1,7 @@
 
 let copiedText = "";
 let input_mode = "start_with_text";
+let hide_diplayCopiedText_timeout;
 
 function loadSearchSettings(data) {
     // Set input mode
@@ -18,18 +19,6 @@ setInputModeButtonText()
 toTopLink_a.style.display = "none";
 
 //#region Navbar and help function
-
-function toggleHelpSideBar(closeOrOpen = "") {
-    if (closeOrOpen === "open") {
-        helpSideBar_div.style.width = "var(--help-side-bar-width)";
-        helpSideBar_div.style.left = "0";
-        for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className -= "hideElem";
-    } else if (closeOrOpen === "close") {
-        helpSideBar_div.style.width = "0";
-        helpSideBar_div.style.left = "-100px";
-        for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className += "hideElem";
-    }
-}
   
 function toggleMode(toggleTo = "toggle") {
     const a_Elem = document.createElement("a");
@@ -54,16 +43,28 @@ function toggleNavBar() {
     controls_div.style.position = navBar.style.height === "0px" ? "fixed" : "relative";
     search_header.style.marginTop = navBar.style.height === "0px" ? "10px" : "var(--search-margin-top)";
 }
-  
-function toggleNoHelpText(hide, index) {
-    let text = noHelpText_p[index];
 
-    if (hide) {
-        if (!text.className.includes(" hideElem")) text.className += " hideElem";
-    } else if (!hide) {
-        if (text.className.includes(" hideElem")) text.className.replace(" hideElem", "");
-    }
-}
+// function toggleHelpSideBar(closeOrOpen = "") {
+//     if (closeOrOpen === "open") {
+//         helpSideBar_div.style.width = "var(--help-side-bar-width)";
+//         helpSideBar_div.style.left = "0";
+//         for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className -= "hideElem";
+//     } else if (closeOrOpen === "close") {
+//         helpSideBar_div.style.width = "0";
+//         helpSideBar_div.style.left = "-100px";
+//         for (let i in helpSideBar_div.children) helpSideBar_div.children[i].className += "hideElem";
+//     }
+// }
+  
+// function toggleNoHelpText(hide, index) {
+//     let text = noHelpText_p[index];
+
+//     if (hide) {
+//         if (!text.className.includes(" hideElem")) text.className += " hideElem";
+//     } else if (!hide) {
+//         if (text.className.includes(" hideElem")) text.className.replace(" hideElem", "");
+//     }
+// }
 
 //#endregion
 
@@ -129,14 +130,17 @@ addCharactersSearch()
 function copyToClipboard(e) {
     let listItemElem = e.target.parentElement.parentElement;
     let listItemBtnElem = e.target;
-
     let characterTranslatedName;
+
+    if (hide_diplayCopiedText_timeout) {
+        clearTimeout(hide_diplayCopiedText_timeout);
+        console.log(hide_diplayCopiedText_timeout);
+    }
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
     let itemName = listItemElem.children[1].children;
 
     for (let i = 0; i < itemName.length; i++) {
-        console.log(itemName[i])
         if (itemName[i].dataset.language === "jp") {
             characterTranslatedName = itemName[i].textContent;
         }
@@ -147,7 +151,7 @@ function copyToClipboard(e) {
     copiedText_span.textContent = `" ${characterTranslatedName} "`;
 
     displayCopiedText_div.style.display = "flex";
-    setTimeout(function() {
+    hide_diplayCopiedText_timeout = setTimeout(function() {
         displayCopiedText_div.style.display = "none";
     }, 1300);
 }
@@ -201,10 +205,14 @@ function addEventListeners() {
             if (evt === "input") searchCharacters();
             else if (evt === "keydown") {
                 if (e.key === "Enter") {
-                    search_input.value = "";
+                    lastEnteredName = e.target.value;
+                    e.target.value = "";
                     searchCharacters();
                 } else if (e.key === "Escape") {
-                    search_input.blur();
+                    e.target.blur();
+                } else if (e.key === "ArrowUp") {
+                    getLastEnteredName(e);
+                    searchCharacters();
                 }
             }
         });
@@ -221,8 +229,8 @@ function addEventListeners() {
     toggleMode_button.addEventListener("click", () => toggleMode());
     toggleNav_button.addEventListener("click", () => toggleNavBar());
     
-    helpOpen_button.addEventListener("click", () => toggleHelpSideBar("open"));
-    helpClose_button.addEventListener("click", () => toggleHelpSideBar("close"));
+    // helpOpen_button.addEventListener("click", () => toggleHelpSideBar("open"));
+    // helpClose_button.addEventListener("click", () => toggleHelpSideBar("close"));
 }
 
 addEventListeners();
