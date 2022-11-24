@@ -9,3 +9,5 @@
 ### 27 October 2022
 * Added Shield Hero character [Filo, Kizuna, Naofumi, Raphtalia]
 * Removed pointless help sidebar
+### 24 November 2022
+* Updated Escanor, Cusack, Chandler and Griamore's Icons
