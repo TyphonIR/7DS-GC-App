@@ -151,24 +151,21 @@ convertName();
 function addEventListeners() {
     toggleMode_button.addEventListener("click", () => toggleMode());
     toggleNav_button.addEventListener("click", () => toggleNavBar());
-
-    ["input", "keydown"].forEach(evt => {
-        convert_input.addEventListener(evt, (e) => {
-            if (evt === "input") {
-                if (e.inputType === "deleteContentBackward") convertName();
-                else convert_input.addEventListener('change', () => {
-                    convertName();
-                    setTimeout(() => {
-                        convert_input.value = ""
-                    }, 0)
-                })
-            }
-            else if (evt === "keydown") {
-                if (e.key === "Escape") {
-                    convert_input.blur();
-                }
-            }
+    
+    convert_input.addEventListener("input", (e) => {
+        if (e.inputType === "deleteContentBackward") convertName();
+        else convert_input.addEventListener('change', (e) => {
+            convertName();
+            setTimeout(() => {
+                convert_input.value = ""
+            }, 0)
         })
+    })
+
+    convert_input.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            convert_input.blur();
+        }
     })
 
     // helpOpen_button.addEventListener("click", () => toggleHelpSideBar("open"));

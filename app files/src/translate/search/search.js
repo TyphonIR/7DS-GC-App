@@ -134,7 +134,6 @@ function copyToClipboard(e) {
 
     if (hide_diplayCopiedText_timeout) {
         clearTimeout(hide_diplayCopiedText_timeout);
-        console.log(hide_diplayCopiedText_timeout);
     }
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -200,22 +199,19 @@ function searchCharacters() {
 //#endregion
 
 function addEventListeners() {
-    ["input", "keydown"].forEach(evt => {
-        search_input.addEventListener(evt, (e) => {
-            if (evt === "input") searchCharacters();
-            else if (evt === "keydown") {
-                if (e.key === "Enter") {
-                    lastEnteredName = e.target.value;
-                    e.target.value = "";
-                    searchCharacters();
-                } else if (e.key === "Escape") {
-                    e.target.blur();
-                } else if (e.key === "ArrowUp") {
-                    getLastEnteredName(e);
-                    searchCharacters();
-                }
-            }
-        });
+    search_input.addEventListener("input", searchCharacters)
+
+    search_input.addEventListener("keydown", e => {
+        if (e.key === "Enter") {
+            lastEnteredName = e.target.value;
+            e.target.value = "";
+            searchCharacters();
+        } else if (e.key === "Escape") {
+            e.target.blur();
+        } else if (e.key === "ArrowUp") {
+            getLastEnteredName(e);
+            searchCharacters();
+        }
     })
     
     for (let i = 0; i < listItemCopy_btn.length; i++) {
