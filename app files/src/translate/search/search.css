@@ -135,7 +135,7 @@ img {
     align-items: center;
     background-color: rgb(30, 30, 30);
     padding: 10px;
-    transition: 300ms ease-in-out;
+    transition: 100ms ease-in-out;
     grid-column: 3 / 4;
 }
 
