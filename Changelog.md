@@ -12,3 +12,6 @@
 ## November 2022
 ### 24 November 2022
 * Updated Escanor, Cusack, Chandler and Griamore's Icons
+## December 2022
+### 29 December 2022
+* Updated Meliodas, Liz and Elizabeth's Icons
