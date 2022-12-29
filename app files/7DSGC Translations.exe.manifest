@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="7DSGC Translations.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="icon.ico" asmv2:publisher="Jarrod" asmv2:product="GC Translations" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:iconFile="MainIcon.ico" asmv2:publisher="Jarrod" asmv2:product="GC Translations" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="7DSGC Translations" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -32,14 +32,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="7DSGC Translations.exe" size="24032">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="7DSGC Translations.exe" size="20960">
       <assemblyIdentity name="7DSGC Translations" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>w737OBCpL7c4+kK/WGIq6x/jr+a0r0vpIkyp+ZigkP8=</dsig:DigestValue>
+        <dsig:DigestValue>zOOlMjgW6G4sqZbf6RWxZf+Ifv8Sw8fPhQXVijAe85E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -51,7 +51,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>r7o6GSDkf5tXzCN+dINHlyEokqSXHkEXJA00lp/+LNA=</dsig:DigestValue>
+        <dsig:DigestValue>5dohZaoKqRisaSh5YWPHuv4aMVf5nLzosHE0Fs3XnvA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -100,13 +100,13 @@
       <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="icon.ico" size="4782">
+  <file name="MainIcon.ico" size="3262">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ckUNlMhQ3KtNUwtiSjcgmvjdA3CBRT5poJF4gBsI1S4=</dsig:DigestValue>
+      <dsig:DigestValue>PtWVyJewyKPuCFaXuo3EiWUCvOCDxee2HycVb8YQ+8M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="runtimes\win-arm64\native\WebView2Loader.dll" size="128952">
